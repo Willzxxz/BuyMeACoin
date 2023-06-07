@@ -251,31 +251,31 @@ export default function BuyMeACoffee(): JSX.Element {
       </Box>
       <Center mt={{ d: "150rem", m: "30rem" }}></Center>
 
-      {isMagic && (
-        <Center>
-          <VStack>
-            <Collapse in={isOpen} animateOpacity>
-              <Box
-                border="2rem solid"
-                w={{ d: "700rem", m: "330rem" }}
-                mt={{ d: "50rem", m: "100rem" }}
-                mb={{ d: "50rem" }}
-                py={{ d: "20rem", m: "20rem" }}
-                px={{ d: "40rem", m: "10rem" }}
-                borderRadius="12rem"
-                bgColor={{ d: "white", m: "hsla(360, 100%, 100%, .7)" }}
-                zIndex="2"
-              >
-                <Center>
-                  <Text
-                    my="30rem"
-                    fontSize={{ d: "30rem", m: "20rem" }}
-                    color="black"
-                  >
-                    <b>Messages received</b>
-                  </Text>
-                </Center>
-                {memos
+      <Center>
+        <VStack>
+          <Collapse in={isOpen} animateOpacity>
+            <Box
+              border="2rem solid"
+              w={{ d: "700rem", m: "330rem" }}
+              mt={{ d: "50rem", m: "100rem" }}
+              mb={{ d: "50rem" }}
+              py={{ d: "20rem", m: "20rem" }}
+              px={{ d: "40rem", m: "10rem" }}
+              borderRadius="12rem"
+              bgColor={{ d: "white", m: "hsla(360, 100%, 100%, .7)" }}
+              zIndex="2"
+            >
+              <Center>
+                <Text
+                  my="30rem"
+                  fontSize={{ d: "30rem", m: "20rem" }}
+                  color="black"
+                >
+                  <b>Messages received</b>
+                </Text>
+              </Center>
+              {isConnected &&
+                memos
                   .slice(0)
                   .reverse()
                   .map((memo: Memo, idx: number) => {
@@ -305,8 +305,9 @@ export default function BuyMeACoffee(): JSX.Element {
                       </Box>
                     );
                   })}
-              </Box>
-            </Collapse>
+            </Box>
+          </Collapse>
+          {isMagic && (
             <Button
               bgColor="black"
               color="white"
@@ -318,9 +319,9 @@ export default function BuyMeACoffee(): JSX.Element {
             >
               Hide/Show Messages
             </Button>
-          </VStack>
-        </Center>
-      )}
+          )}
+        </VStack>
+      </Center>
       <br />
     </>
   );

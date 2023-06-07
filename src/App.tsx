@@ -30,23 +30,6 @@ export function App() {
           <Footer />
         </Box>
       </Box>
-
-      {isConnected && (
-        <>
-          {/* <br />
-          <hr />
-          <h2>Send Transaction</h2>
-          <SendTransaction /> */}
-          {/* <br />
-          <hr />
-          <h2>Send Transaction (Prepared)</h2>
-          <SendTransactionPrepared /> */}
-          {/* <br />
-          <hr />
-          <h2>Watch Pending Transactions</h2>
-          <WatchPendingTransactions /> */}
-        </>
-      )}
     </>
   );
 }
