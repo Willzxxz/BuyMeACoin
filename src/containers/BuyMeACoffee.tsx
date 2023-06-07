@@ -265,15 +265,17 @@ export default function BuyMeACoffee(): JSX.Element {
               bgColor={{ d: "white", m: "hsla(360, 100%, 100%, .7)" }}
               zIndex="2"
             >
-              <Center>
-                <Text
-                  my="30rem"
-                  fontSize={{ d: "30rem", m: "20rem" }}
-                  color="black"
-                >
-                  <b>Messages received</b>
-                </Text>
-              </Center>
+              {isConnected && (
+                <Center>
+                  <Text
+                    my="30rem"
+                    fontSize={{ d: "30rem", m: "20rem" }}
+                    color="black"
+                  >
+                    <b>Messages received</b>
+                  </Text>
+                </Center>
+              )}
               {isConnected &&
                 memos
                   .slice(0)
