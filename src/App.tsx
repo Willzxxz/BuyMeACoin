@@ -7,7 +7,7 @@ import Footer from "./containers/Footer";
 import BuyMeACoffee from "./containers/BuyMeACoffee";
 
 import Coffee from "/coffee.jpg";
-import { Box } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 
 export function App() {
   const { isConnected } = useAccount();
@@ -30,6 +30,25 @@ export function App() {
           <Footer />
         </Box>
       </Box>
+
+      {isConnected && (
+        <>
+          <Center>
+            {/* <br />
+            <hr />
+            <h2>Send Transaction</h2>
+            <SendTransaction /> */}
+            {/* <br />
+            <hr />
+            <h2>Send Transaction (Prepared)</h2>
+            <SendTransactionPrepared /> */}
+            {/* <br />
+            <hr />
+            <h2>Watch Pending Transactions</h2>
+            <WatchPendingTransactions /> */}
+          </Center>
+        </>
+      )}
     </>
   );
 }

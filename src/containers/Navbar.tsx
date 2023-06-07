@@ -1,6 +1,6 @@
 import { Box, HStack, useBreakpointValue } from "@chakra-ui/react";
 import ConnectCustomNav from "../components/connectButtonCustomNavbar";
-// import ConnectCustomNav from "../components/connectButtonCustomNavbar";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Navbar() {
   useBreakpointValue({ m: true, d: false });
@@ -26,9 +26,8 @@ export default function Navbar() {
         <Box fontFamily="Parisienne" fontSize={{ d: "40rem", m: "30rem" }}>
           Will
         </Box>
-        <Box>
-          <ConnectCustomNav />
-        </Box>
+        <Box>{/* <ConnectCustomNav /> */}</Box>
+        <ConnectButton />
       </HStack>
     </Box>
   );
