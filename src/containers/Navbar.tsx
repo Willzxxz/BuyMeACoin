@@ -26,8 +26,10 @@ export default function Navbar() {
         <Box fontFamily="Parisienne" fontSize={{ d: "40rem", m: "30rem" }}>
           Will
         </Box>
-        <Box>{/* <ConnectCustomNav /> */}</Box>
-        <ConnectButton />
+        <Box>
+          <ConnectCustomNav />
+        </Box>
+        {/* <ConnectButton /> */}
       </HStack>
     </Box>
   );
