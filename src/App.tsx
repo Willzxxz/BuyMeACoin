@@ -1,99 +1,52 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { useAccount } from 'wagmi'
+import { useAccount } from "wagmi";
+import { SendTransaction } from "./components/SendTransaction";
+import { SendTransactionPrepared } from "./components/SendTransactionPrepared";
+import { WatchPendingTransactions } from "./components/WatchPendingTransactions";
+import Navbar from "./containers/Navbar";
+import Footer from "./containers/Footer";
+import BuyMeACoffee from "./containers/BuyMeACoffee";
 
-import { Account } from './components/Account'
-import { Balance } from './components/Balance'
-import { BlockNumber } from './components/BlockNumber'
-import { NetworkSwitcher } from './components/NetworkSwitcher'
-import { ReadContract } from './components/ReadContract'
-import { ReadContracts } from './components/ReadContracts'
-import { ReadContractsInfinite } from './components/ReadContractsInfinite'
-import { SendTransaction } from './components/SendTransaction'
-import { SendTransactionPrepared } from './components/SendTransactionPrepared'
-import { SignMessage } from './components/SignMessage'
-import { SignTypedData } from './components/SignTypedData'
-import { Token } from './components/Token'
-import { WatchContractEvents } from './components/WatchContractEvents'
-import { WatchPendingTransactions } from './components/WatchPendingTransactions'
-import { WriteContract } from './components/WriteContract'
-import { WriteContractPrepared } from './components/WriteContractPrepared'
+import Coffee from "/coffee.jpg";
+import { Box } from "@chakra-ui/react";
 
 export function App() {
-  const { isConnected } = useAccount()
+  const { isConnected } = useAccount();
 
   return (
     <>
-      <h1>wagmi + RainbowKit + Vite</h1>
-
-      <ConnectButton />
+      <Box h={{ d: "100vh", m: "" }}>
+        <Box
+          bgImage={Coffee}
+          bgSize={{ d: "1440rem", m: "1440rem" }}
+          bgRepeat="no-repeat"
+          h={{ d: "770rem", m: "650rem" }}
+          bgPosition={{ m: "bottom" }}
+          w={{ d: "1440rem", m: "360rem" }}
+          mx="auto"
+          borderBottom="solid 5rem black"
+        >
+          <Navbar />
+          <BuyMeACoffee />
+          <Footer />
+        </Box>
+      </Box>
 
       {isConnected && (
         <>
-          <hr />
-          <h2>Network</h2>
-          <NetworkSwitcher />
-          <br />
-          <hr />
-          <h2>Account</h2>
-          <Account />
-          <br />
-          <hr />
-          <h2>Balance</h2>
-          <Balance />
-          <br />
-          <hr />
-          <h2>Block Number</h2>
-          <BlockNumber />
-          <br />
-          <hr />
-          <h2>Read Contract</h2>
-          <ReadContract />
-          <br />
-          <hr />
-          <h2>Read Contracts</h2>
-          <ReadContracts />
-          <br />
-          <hr />
-          <h2>Read Contracts Infinite</h2>
-          <ReadContractsInfinite />
-          <br />
+          {/* <br />
           <hr />
           <h2>Send Transaction</h2>
-          <SendTransaction />
-          <br />
+          <SendTransaction /> */}
+          {/* <br />
           <hr />
           <h2>Send Transaction (Prepared)</h2>
-          <SendTransactionPrepared />
-          <br />
-          <hr />
-          <h2>Sign Message</h2>
-          <SignMessage />
-          <br />
-          <hr />
-          <h2>Sign Typed Data</h2>
-          <SignTypedData />
-          <br />
-          <hr />
-          <h2>Token</h2>
-          <Token />
-          <br />
-          <hr />
-          <h2>Watch Contract Events</h2>
-          <WatchContractEvents />
-          <br />
+          <SendTransactionPrepared /> */}
+          {/* <br />
           <hr />
           <h2>Watch Pending Transactions</h2>
-          <WatchPendingTransactions />
-          <br />
-          <hr />
-          <h2>Write Contract</h2>
-          <WriteContract />
-          <br />
-          <hr />
-          <h2>Write Contract (Prepared)</h2>
-          <WriteContractPrepared />
+          <WatchPendingTransactions /> */}
         </>
       )}
     </>
-  )
+  );
 }
